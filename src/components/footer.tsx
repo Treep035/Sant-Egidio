@@ -6,47 +6,24 @@ import {
 } from "@material-tailwind/react";
 
 const CURRENT_YEAR = new Date().getFullYear();
-const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
+// const LINKS = ["Company", "About Us", "Team", "Products", "Blog"];
 
 export function Footer() {
   return (
     <footer className="pb-5 p-10 md:pt-10">
       <div className="container flex flex-col mx-auto">
-        <div className="flex !w-full py-10 mb-5 md:mb-20 flex-col justify-center !items-center bg-gray-900 container max-w-6xl mx-auto rounded-2xl p-5 ">
-          <Typography
-            className="text-2xl md:text-3xl text-center font-bold "
-            color="white"
-          >
-            Join our community!
-          </Typography>
-          <Typography
-            color="white"
-            className=" md:w-7/12 text-center my-3 !text-base"
-          >
-            Get news in your inbox every week! We hate spam too, so no worries
-            about this.
-          </Typography>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 md:flex-row">
-            <div className="w-80">
-              {/* @ts-ignore */}
-              <Input label="Email" color="white" />
-            </div>
-            <Button size="md" className="lg:w-32" fullWidth color="white">
-              subscribe
-            </Button>
-          </div>
-        </div>
         <div className="flex flex-col md:flex-row items-center !justify-between">
           <Typography
             as="a"
-            href="https://www.material-tailwind.com"
+            href="https://www.santegidio.org/"
             target="_blank"
             variant="h6"
             className="text-gray-900"
+            placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}
           >
-            Material Tailwind
+            Sant Egidio
           </Typography>
-          <ul className="flex justify-center my-4 md:my-0 w-max mx-auto items-center gap-4">
+          {/* <ul className="flex justify-center my-4 md:my-0 w-max mx-auto items-center gap-4">
             {LINKS.map((link, index) => (
               <li key={index}>
                 <Typography
@@ -55,40 +32,48 @@ export function Footer() {
                   variant="small"
                   color="white"
                   className="font-normal !text-gray-700 hover:!text-gray-900 transition-colors"
+                  placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}
                 >
                   {link}
                 </Typography>
               </li>
             ))}
-          </ul>
+          </ul> */}
           <div className="flex w-fit justify-center gap-2">
-            <IconButton size="sm" color="gray" variant="text">
-              <i className="fa-brands fa-twitter text-lg" />
-            </IconButton>
-            <IconButton size="sm" color="gray" variant="text">
-              <i className="fa-brands fa-youtube text-lg" />
-            </IconButton>
-            <IconButton size="sm" color="gray" variant="text">
-              <i className="fa-brands fa-instagram text-lg" />
-            </IconButton>
-            <IconButton size="sm" color="gray" variant="text">
-              <i className="fa-brands fa-github text-lg" />
-            </IconButton>
+            <a href="https://x.com/santegidio_ES" target="_blank" rel="noopener noreferrer">
+              <IconButton size="sm" color="gray" variant="text" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+                <i className="fa-brands fa-twitter text-lg" />
+              </IconButton>
+            </a>
+            <a href="https://www.youtube.com/@santegidio" target="_blank" rel="noopener noreferrer">
+              <IconButton size="sm" color="gray" variant="text" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+                <i className="fa-brands fa-youtube text-lg" />
+              </IconButton>
+            </a>
+            <a href="https://www.instagram.com/sant.egidio/?hl=es" target="_blank" rel="noopener noreferrer">
+              <IconButton size="sm" color="gray" variant="text" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+                <i className="fa-brands fa-instagram text-lg" />
+              </IconButton>
+            </a>
+            <a href="https://www.facebook.com/SantEgidioBarcelona/" target="_blank" rel="noopener noreferrer">
+              <IconButton size="sm" color="gray" variant="text" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+                <i className="fa-brands fa-facebook text-lg" />
+              </IconButton>
+            </a>
           </div>
         </div>
         <Typography
           color="blue-gray"
           className="text-center mt-12 font-normal !text-gray-700"
+          placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}
         >
-          &copy; {CURRENT_YEAR} Made with{" "}
-          <a href="https://www.material-tailwind.com" target="_blank">
-            Material Tailwind
+          <a href="https://www.prateducacio.com/" target="_blank">
+            Prat Educació
           </a>{" "}
-          by{" "}
-          <a href="https://www.creative-tim.com" target="_blank">
-            Creative Tim
+            - {" "}
+          <a href="https://github.com/Treep035" target="_blank">
+            Marco Fernández
           </a>
-          .
         </Typography>
       </div>
     </footer>

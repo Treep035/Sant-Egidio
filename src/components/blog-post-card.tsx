@@ -11,24 +11,33 @@ import {
 
 interface BlogPostCardProps {
   img: string;
-  tag: string;
   title: string;
-  desc: string;
-  author: { name: string; img: string };
-  date: string;
+  direccion?: string;
+  metro?: string;
+  bus?: string;
+  numero?: string;
+  email?: string;
+  horario?: string;
+  condicio?: string;
 }
 
 export function BlogPostCard({
   img,
-  tag,
   title,
-  desc,
-  author,
-  date,
+  direccion,
+  metro,
+  bus,
+  numero,
+  email,
+  horario,
+  condicio,
 }: BlogPostCardProps) {
+  const direccionSinEmoji = direccion ? direccion.replace("📍", "").trim() : "";
+  const mapsLink = direccionSinEmoji ? `https://www.google.com/maps?q=${encodeURIComponent(direccionSinEmoji)}` : "#";
+  console.log({ title, direccion, metro, bus, numero, horario, condicio });
   return (
-    <Card shadow={true}>
-      <CardHeader>
+    <Card shadow={true} placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+      <CardHeader placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
         <Image
           width={768}
           height={768}
@@ -37,45 +46,39 @@ export function BlogPostCard({
           className="h-full w-full scale-110 object-cover"
         />
       </CardHeader>
-      <CardBody className="p-6">
-        <Typography variant="small" color="blue" className="mb-2 !font-medium">
-          {tag}
-        </Typography>
+      <CardBody className="p-6" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
         <Typography
           as="a"
-          href="#"
+          href={mapsLink}
           variant="h5"
           color="blue-gray"
           className="mb-2 normal-case transition-colors hover:text-gray-900"
+          placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}
         >
           {title}
         </Typography>
-        <Typography className="mb-6 font-normal !text-gray-500">
-          {desc}
+        <Typography className="mb-6 font-normal !text-gray-500" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+          {direccion}
+        </Typography>
+        <Typography className="mb-6 font-normal !text-black-500" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+          {metro}
+        </Typography>
+        <Typography className="mb-6 font-normal !text-black-500" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+          {bus}
+        </Typography>
+        <Typography className="mb-6 font-normal !text-black-500" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+          {numero}
+        </Typography>
+        <Typography className="mb-6 font-normal !text-black-500" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+          {email}
+        </Typography>
+        <Typography className="mb-6 font-normal !text-gray-500" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+          {horario}
+        </Typography>
+        <Typography className="mb-6 font-normal !text-black-500" placeholder="" onPointerEnterCapture={() => {}} onPointerLeaveCapture={() => {}}>
+          {condicio}
         </Typography>
         <div className="flex items-center gap-4">
-          <Avatar
-            size="sm"
-            variant="circular"
-            src={author.img}
-            alt={author.name}
-          />
-          <div>
-            <Typography
-              variant="small"
-              color="blue-gray"
-              className="mb-0.5 !font-medium"
-            >
-              {author.name}
-            </Typography>
-            <Typography
-              variant="small"
-              color="gray"
-              className="text-xs !text-gray-500 font-normal"
-            >
-              {date}
-            </Typography>
-          </div>
         </div>
       </CardBody>
     </Card>
