@@ -62,7 +62,7 @@ export function Posts() {
           onPointerEnterCapture={() => {}}
           onPointerLeaveCapture={() => {}}
         >
-          Visualitza les notícies de Sant'Egidio
+          Visualitza les notícies de Sant&apos;Egidio
         </Typography>
         <hr className="my-8 border-t-4 border-[rgba(128, 128, 128, 0.34)] w-1/2 mx-auto rounded-md" />
       </div>
